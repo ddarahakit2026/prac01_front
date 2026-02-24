@@ -16,6 +16,10 @@ const getBoard = async () => {
   console.log(data)
   board.value = data
 }
+
+const deleteBoard = async () => {
+  await api.boardDelete(boardIdx)
+}
 onMounted(() => {
   getBoard()
 })
@@ -31,6 +35,8 @@ onMounted(() => {
   <p>
     <span>{{ board.contents }}</span>
   </p>
+
+  <button @click="deleteBoard">삭제하기</button>
 </template>
 
 <style scoped></style>

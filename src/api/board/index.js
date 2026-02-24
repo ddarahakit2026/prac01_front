@@ -14,4 +14,18 @@ const reg = async (req) => {
   return data
 }
 
-export default { reg }
+const list = async () => {
+  let data = {}
+
+  await api
+    .get('/board/list')
+    .then((res) => {
+      data = res.data
+    })
+    .catch((error) => {
+      data = error.data
+    })
+  return data
+}
+
+export default { reg, list }

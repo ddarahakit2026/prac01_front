@@ -56,4 +56,17 @@ const update = async (boardIdx, req) => {
   return data
 }
 
-export default { reg, list, read, update }
+const boardDelete = async (boardIdx) => {
+  let data = {}
+  await api
+    .delete(`/board/delete/${boardIdx}`)
+    .then((res) => {
+      data = res.data
+    })
+    .catch((error) => {
+      data = error.data
+    })
+  return data
+}
+
+export default { reg, list, read, update, boardDelete }

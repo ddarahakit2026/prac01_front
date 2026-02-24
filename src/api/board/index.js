@@ -42,4 +42,18 @@ const read = async (boardIdx) => {
   return data
 }
 
-export default { reg, list, read }
+const update = async (boardIdx, req) => {
+  let data = {}
+  console.log(boardIdx, req)
+  await api
+    .put(`/board/update/${boardIdx}`, req)
+    .then((res) => {
+      data = res.data
+    })
+    .catch((error) => {
+      data = error.data
+    })
+  return data
+}
+
+export default { reg, list, read, update }

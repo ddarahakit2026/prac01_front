@@ -18,6 +18,11 @@ const router = createRouter({
       path: '/board/read/:boardIdx',
       component: () => import('@/views/board/Read.vue'),
     },
+    {
+      name: 'boardUpdate',
+      path: '/board/update/:boardIdx',
+      component: () => import('@/views/board/Update.vue'),
+    },
   ],
 })
 

@@ -13,6 +13,11 @@ const router = createRouter({
       path: '/board/list',
       component: () => import('@/views/board/List.vue'),
     },
+    {
+      name: 'boardRead',
+      path: '/board/read/:boardIdx',
+      component: () => import('@/views/board/Read.vue'),
+    },
   ],
 })
 
